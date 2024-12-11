@@ -10,19 +10,62 @@ body{
 /*nav media*/
 @media(max-width:807px) {
     
-    .nav-right{
-        display: none;
-    }
+  
  .nav-left {
     display: flex;
     justify-content: space-between;
     width: 100%;
  }
 
-  
+ 
 .nav-left span{
 visibility: visible !important;
+
 }
+/*
+.nav-left:hover ~ .nav-right{
+display: block !important;
+
+}*/
+.menu-icon {
+    display: inline-block !important;
+}
+
+#menu-toggle:checked ~ .nav-right {
+    display: block !important;
+  
+}
+
+.nav-right {
+  display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    
+    background-color:  #ffffff83;
+
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    width: 200px;
+    border-radius: 5px;
+}
+
+.nav-right ul {
+    display: flex !important;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.nav-right ul li {
+    padding: 10px 0;
+    width: 100%;
+}
+
+
+
 .main{
     width:80% !important;
    
@@ -31,10 +74,51 @@ visibility: visible !important;
     width: 500px !important;
  
 }
+/*contact*/
+.form{
+    display:  block !important;
+    justify-content: center !important;
+}
+.inp{
+    width: 100%;
+   
+}
+input{
+    width: 100%;
+}
+textarea{
+width: 100% !important;
+}
+.formbtn{
+    text-align: center !important;
+    width: 100% !important;
+}
+.cont{
+    width: 100% !important;
+    text-align: center !important;
+}
+.cont p{
+    width: 100% !important;
+}
+.cont li{
+    width: 100%;
+    text-align: center !important;
+  
+}
 }
 
+.navhide{
+    display: none;
+}
+.menu-toggle {
+    display: none;
+}
 
-
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+}
 
 a{
     text-decoration: none;
@@ -52,7 +136,7 @@ nav{
     top: 0px;
     left: 0px;
     width: 100%;
-    
+z-index: 1 !important;
 }
 .container {
  
@@ -85,6 +169,8 @@ nav{
     
    
 }
+
+
 .nav-right ul li a:hover{
     color: #fb416b;
     text-decoration:underline ;
@@ -114,15 +200,27 @@ nav{
          width:250px  !important ;
      }
      .main{
-        width: 20% !important;
+        width: 80% !important;
         height: auto;
-        margin: 0px 40px !important;
+        
      }
     
      .main .wood ,.main .tedy{
-        width: 20% !important;
-        height: 100px;
+        width: 100% !important;
+        
      
+    }
+    .tedy img{
+        width: 160px !important;
+    
+        padding-right: 0px !important;
+        overflow: hidden;
+    } 
+    .wood img{
+        width: 160px !important;
+    
+        padding-left: 0px !important;
+        overflow: hidden;
     }
  
 
@@ -200,17 +298,29 @@ transition: 1.2s;
 }
 @media(max-width:714px){
     .main{
-        width:50% !important;
+        width:80% !important;
       
        
        
     }
     .main .wood ,.main .tedy{
-        width: 400px !important;
+        width: 100% !important;
       
     }
     .main img{
         width: 190px !important;
+    }
+    .tedy img{
+        width: 160px !important;
+    
+        padding-right: 0px !important;
+        overflow: hidden;
+    } 
+    .wood img{
+        width: 160px !important;
+    
+        padding-left: 0px !important;
+        overflow: hidden;
     }
 
 
@@ -245,18 +355,33 @@ transition: 1.2s;
 @media(max-width: 442px){
     .main{
         width:80% !important;
+        display: flex;
     }
     .main .wood ,.main .tedy{
-        width: 250px !important;
-        
+        width: 100% !important;
+       text-align: center; 
+       margin-left: 20px;
+       display: flex;
       
     }
-    .main img{
-        width: 150px !important;
+    .tedy img{
+        width: 160px !important;
+    
+        padding-right: 0px !important;
+        overflow: hidden;
     } 
+    .wood img{
+        width: 160px !important;
+    
+        padding-left: 0px !important;
+        overflow: hidden;
+    }
+  
+
     .txttoy button{
+    
         width: 80% !important;
-        margin-left: 10px !important;
+       
     } 
     .txttoy h2{
         font-size: 20px !important;
@@ -409,6 +534,18 @@ justify-content: space-between !important;
         margin-left: 0px !important;
 
     }
+    .tedy img{
+        width: 160px !important;
+    
+        padding-right: 0px !important;
+        overflow: hidden;
+    } 
+    .wood img{
+        width: 160px !important;
+    
+        padding-left: 0px !important;
+        overflow: hidden;
+    }
 }
 .StuffedAnimals{
     max-width: 1200px;
@@ -450,7 +587,7 @@ justify-content: space-between;
     margin-top: 40px;
     display: flex;
     justify-content: center;
-
+   
     width: 100%;
 }
 .toys .toy{
@@ -467,6 +604,7 @@ justify-content: space-between;
 .toys .toy:hover{
 transform:scale(1.1,1.1) ;
 overflow: hidden;
+
 }
 .toys .toy img{
     width: 180px;
@@ -795,11 +933,130 @@ line-height: 20px;
 {
     margin-top: auto !important;
     width: 100% !important;
-    height: 100% !important;
+    height: 100%;
     background-size: cover;
 }
 .hed2{
-  margin-top:10px ; 
+  margin-top:10px ;
+    
     text-align: center;
 }
+.contact{
+    height: auto;
+    display: block;
+    text-align: center;
+    width: 80%;
+    background-color: white;
+    border-radius: 20px;
+    
+}
+.map{
+    padding-top: 40px;
+}
+.map iframe{
+  border-radius: 20px;
+    border: none;
+    
+}
+.form{
+    margin-top: 100px;
+    display: flex;
+    width: 100%;
+}
+.form .inp form{
+  display: block;
+  
+}
+.inp{
+    width: 50%;
+    height: auto;
+    text-align: left;
+   
+}
+.inp h2{
+margin: 30px 0px;
+font-size: 29px;
+font-weight: 400;
 
+}
+.inp label{
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+input{
+    margin: 10px 0px;
+    width: 100%;
+    height: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.293);
+}
+textarea{
+    margin: 10px 0px;
+    width: 100%;
+    height: 100px;
+    border: 1px solid rgba(0, 0, 0, 0.293);
+    border-radius: 20px;
+}
+textarea:placeholder-shown{
+    padding-top: 20px;
+    padding-left: 20px;
+}
+input:placeholder-shown{
+    padding-left: 20px;
+}
+.inp .formbtn{
+    border: none;
+    background-color: #fb416b;
+    width: 40%;
+    color: #f8f8f8;
+}
+
+.cont{
+    margin-top: 40px;
+    width: 30%;
+    text-align: left;
+    height: auto;
+}
+.cont h2{
+    font-size: 20px;
+    margin-bottom: 30px ;
+    font-weight: 15px;
+    letter-spacing: 1px;
+}
+.cont p{
+    font-size: 13px;
+    color: #00000060;
+    margin: 10px 0px;
+    width: 70%;
+}
+.cont button{
+    border: none;
+    margin: 10px 0px;
+    border-radius: 10px;
+   padding: 10px;
+   color: #fb416b;
+}
+.cont h4{
+    margin-top: 20px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: 400;
+  
+}
+.cont ul{
+    display: flex;
+ padding-left: 0px !important;
+   
+}
+.cont li{
+   
+    padding-right: 20px;
+margin: 0px;
+text-align: left ;
+}
+.cont i{
+font-size: 20px;
+    padding-top: 20px;
+    color: #fb416b !important;
+}
